@@ -34,4 +34,15 @@ class AccountTest {
         Assertions.assertThrows(IllegalStateException.class, () -> account.deposit(-100));
     }
 
+    @Test
+    void should_withdrawal_money_in_the_account() {
+        Account account = new Account();
+        account.deposit(200);
+
+        account.withdrawal(12.2);
+
+        Assertions.assertEquals(187.8, account.getBalance());
+    }
+
+
 }
