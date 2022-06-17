@@ -26,4 +26,12 @@ class AccountTest {
         Assertions.assertEquals(500, account.getBalance());
 
     }
+
+    @Test
+    void should_throw_exception_when_deposit_bad_money() {
+        Account account =  new Account();
+
+        Assertions.assertThrows(IllegalStateException.class, () -> account.deposit(-100));
+    }
+
 }
