@@ -15,4 +15,15 @@ class AccountTest {
 
     }
 
+    @Test
+    void should_deposit_money_in_an_account_already_received_money() {
+
+        Account account = new Account();
+
+        account.deposit(200);
+        account.deposit(300);
+
+        Assertions.assertEquals(500, account.getBalance());
+
+    }
 }
