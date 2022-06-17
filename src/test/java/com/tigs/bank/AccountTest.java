@@ -51,5 +51,15 @@ class AccountTest {
         Assertions.assertThrows(IllegalStateException.class, () -> account.withdrawal(300));
     }
 
+    @Test
+    void sould_print_historic_of_the_account() {
+        Account account = new Account();
+        account.deposit(200);
+        account.withdrawal(50.5);
+        account.withdrawal(49.5);
+
+        account.printHistoric();
+
+    }
 
 }
