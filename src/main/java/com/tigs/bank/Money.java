@@ -1,7 +1,7 @@
 package com.tigs.bank;
 
 public class Money {
-    private double value;
+    private final double value;
 
     public Money(double value) {
         this.value = value;
@@ -9,5 +9,12 @@ public class Money {
 
     public double getValue() {
         return value;
+    }
+
+    @Override
+    public String toString() {
+        return "Money{" +
+                "value=" + value +
+                '}';
     }
 }
