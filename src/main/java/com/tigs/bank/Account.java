@@ -17,6 +17,12 @@ public class Account {
 
     }
 
+    public void withdrawal(double d) {
+
+        this.balance = new Money(this.balance.getValue() - d);
+    }
+
+
     public double getBalance() {
         return balance.getValue();
     }
