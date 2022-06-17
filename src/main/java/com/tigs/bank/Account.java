@@ -11,11 +11,10 @@ public class Account {
             throw new IllegalStateException("Unauthorized operation");
         }
 
-        if (this.balance != null) {
-            this.balance = new Money(depo + this.balance.getValue());
-        } else {
-            this.balance = new Money(depo);
-        }
+           this.balance = this.balance != null ?
+            new Money(depo + this.balance.getValue()):
+            new Money(depo);
+
     }
 
     public double getBalance() {
