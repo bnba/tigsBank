@@ -18,6 +18,9 @@ public class Account {
     }
 
     public void withdrawal(double d) {
+        if (this.balance == null || this.balance.getValue() < d) {
+            throw new IllegalStateException("Unauthorized operation");
+        }
 
         this.balance = new Money(this.balance.getValue() - d);
     }
