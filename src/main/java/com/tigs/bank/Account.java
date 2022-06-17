@@ -6,11 +6,15 @@ public class Account {
 
     private Money balance;
 
-    public void deposit(double d) {
+    public void deposit(double depo) {
+        if (depo < 0) {
+            throw new IllegalStateException("Unauthorized operation");
+        }
+
         if (this.balance != null) {
-            this.balance = new Money(d + this.balance.getValue());
+            this.balance = new Money(depo + this.balance.getValue());
         } else {
-            this.balance = new Money(d);
+            this.balance = new Money(depo);
         }
     }
 
